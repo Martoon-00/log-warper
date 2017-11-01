@@ -211,7 +211,7 @@ createLogFormatter
     simpleLogFormatter format handle record
   where
     format = mconcat $!
-        [ colorizer priority $ "[$loggername:$prio" <> tidShower <> "] "
+        [ "[$loggername:" <> colorizer priority ("$prio" <> tidShower) <> "] "
         , timeShower
         , "$msg"
         ]
